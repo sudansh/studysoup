@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Appointments</string>
+    <string name="dummy_description">Extra information about this date goes here</string>
+</resources>
