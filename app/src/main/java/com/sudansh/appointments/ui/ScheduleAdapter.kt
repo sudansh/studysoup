@@ -32,7 +32,7 @@ class ScheduleAdapter(private var callback: OnItemClickListener) : RecyclerView.
         val date = items[position]
         binding.day.text = DateFormat.format("EEE", date)
         binding.date.text = DateFormat.format("dd", date)
-        binding.time.text = DateFormat.format("HH:mm a", date)
+        binding.time.text = DateFormat.format("HH:mm", date)
         binding.mainContainer.setOnClickListener {
             callback.onItemClick(items[position])
         }

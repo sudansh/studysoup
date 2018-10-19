@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity(), OnItemClickListener {
     }
 
     override fun onItemClick(date: Date) {
-        tvDate.text = DateFormat.format("dd-mm hh:mm a", date)
+        tvDate.text = DateFormat.format("dd-mm HH:mm", date)
         bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
     }
 }

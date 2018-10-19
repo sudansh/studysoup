@@ -7,10 +7,9 @@ import androidx.lifecycle.MutableLiveData
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
-import com.sudansh.appointments.network.Api
-import com.sudansh.appointments.network.Schedule
+import com.sudansh.apimodule.network.Api
+import com.sudansh.apimodule.network.Schedule
 import okhttp3.ResponseBody
-import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.util.*
@@ -26,11 +25,11 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
 
     private fun fetchSchedules() {
         service.getAppointment().enqueue(object : Callback<ResponseBody> {
-            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+            override fun onFailure(call: retrofit2.Call<ResponseBody>, t: Throwable) {
                 Log.i("Error", t.localizedMessage)
             }
 
-            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+            override fun onResponse(call: retrofit2.Call<ResponseBody>, response: Response<ResponseBody>) {
                 if (response.isSuccessful) {
                     parseResponse(response.body()?.string().orEmpty())
                 }

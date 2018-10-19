@@ -1,7 +1,7 @@
-package com.sudansh.appointments.network
+package com.sudansh.apimodule.network
 
 import android.content.Context
-import com.sudansh.appointments.R
+import com.sudansh.apimodule.R
 import okhttp3.OkHttpClient
 import java.io.IOException
 import java.io.InputStream
@@ -42,8 +42,8 @@ object SelfSigningClientBuilder {
             sslContext.init(null, tmf.trustManagers, null)
 
             client = OkHttpClient.Builder()
-                    .sslSocketFactory(sslContext.socketFactory)
-                    .build()
+                .sslSocketFactory(sslContext.socketFactory)
+                .build()
 
         } catch (e: KeyStoreException) {
             e.printStackTrace()

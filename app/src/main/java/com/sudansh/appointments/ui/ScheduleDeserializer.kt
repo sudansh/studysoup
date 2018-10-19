@@ -2,7 +2,7 @@ package com.sudansh.appointments.ui
 
 import android.annotation.SuppressLint
 import com.google.gson.*
-import com.sudansh.appointments.network.Schedule
+import com.sudansh.apimodule.network.Schedule
 import org.json.JSONException
 import java.lang.reflect.Type
 import java.text.ParseException
